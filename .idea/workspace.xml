@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6c070fa9-f6d0-4d36-8a97-ad5eccaf5c82" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1TKAtDk3N1iVsIbB118eMRuyvCI" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="D:/JavaJar/fastjson-1.2.61.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEAProject\analyseCallLog\analyseCallLog\src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.StartBuildModel">
+    <configuration name="Analyser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="analyseMethodCall.Analyser" />
+      <module name="analyseCallLog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="analyseMethodCall.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartBuildModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="buildModel.StartBuildModel" />
+      <module name="analyseCallLog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="buildModel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartSimilarity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="eventSimilarity.StartSimilarity" />
+      <module name="analyseCallLog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="eventSimilarity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestMatchCallTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.TestMatchCallTree" />
+      <module name="analyseCallLog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StartBuildModel" />
+        <item itemvalue="Application.Analyser" />
+        <item itemvalue="Application.TestMatchCallTree" />
+        <item itemvalue="Application.StartSimilarity" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6c070fa9-f6d0-4d36-8a97-ad5eccaf5c82" name="Default Changelist" comment="" />
+      <created>1573198625175</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573198625175</updated>
+      <workItem from="1573198657147" duration="4714000" />
+      <workItem from="1573262172626" duration="305000" />
+      <workItem from="1573285739637" duration="12726000" />
+      <workItem from="1573347868199" duration="19182000" />
+      <workItem from="1573434545877" duration="3234000" />
+      <workItem from="1573471573326" duration="13593000" />
+      <workItem from="1573540132136" duration="2119000" />
+      <workItem from="1573557789936" duration="4344000" />
+      <workItem from="1573568343812" duration="4596000" />
+      <workItem from="1573607616948" duration="6892000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
