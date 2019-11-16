@@ -106,15 +106,16 @@ public class GenerateEventUtil {
         //定位到下一个动作的开始之间
         end--;
 
-        if(curMethodName.equals(DISPATCH)){
-            //使用action=1的dispatchTouchEvent的信息
-            curMyMethod = callSequences.get(pos);
-            MyMethod disMethod = callSequences.get(start);
-//            disMethod.methodCaller = curMyMethod.methodCaller;
-            disMethod.childs = curMyMethod.childs;
-            disMethod.selfJson = curMyMethod.selfJson;
-//            disMethod.parent = curMyMethod.parent;
-        }
+        //跳过处理事件的组件找到用户直接点击的组件
+//        if(curMethodName.equals(DISPATCH)){
+//            //使用action=1的dispatchTouchEvent的信息
+//            curMyMethod = callSequences.get(pos);
+//            MyMethod disMethod = callSequences.get(start);
+////            disMethod.methodCaller = curMyMethod.methodCaller;
+//            disMethod.childs = curMyMethod.childs;
+//            disMethod.selfJson = curMyMethod.selfJson;
+////            disMethod.parent = curMyMethod.parent;
+//        }
         return new int[]{start,end};
     }
 

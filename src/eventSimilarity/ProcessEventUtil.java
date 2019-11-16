@@ -22,11 +22,17 @@ public class ProcessEventUtil {
      * @return true 表示两个event相同
      */
     public static boolean checkEvent(Event event1,Event event2){
-        if(event1.getComponentId().equals(event2.getComponentId())&&event1.getPath().equals(event2.getPath())){
+        //去掉Id判断，setText方法的Id可能会不同 （目前）
+        if(event1.getPath().equals(event2.getPath())){
             if(event1.getMethodName().equals(event2.getMethodName())){
                 return true;
             }
         }
+//        if(event1.getComponentId().equals(event2.getComponentId())&&event1.getPath().equals(event2.getPath())){
+//            if(event1.getMethodName().equals(event2.getMethodName())){
+//                return true;
+//            }
+//        }
         return false;
     }
 
@@ -86,8 +92,10 @@ public class ProcessEventUtil {
         sample.setParameters(temp.getParameters());
         List<List<MyMethod>> methodsList = new ArrayList<>();
         for(Event event:events){
+//            System.out.println(event.getComponentId()+" "+event.getMethodName());
             methodsList.add( event.getInvokeList() );
         }
+//        System.out.println("----");
         List<MyMethod> invokeTrees = getMostCommonInvoke(methodsList);
         sample.setInvokeList(invokeTrees);
         return sample;

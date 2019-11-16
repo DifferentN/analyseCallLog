@@ -15,6 +15,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1TKAtDk3N1iVsIbB118eMRuyvCI" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -123,10 +126,29 @@
       <workItem from="1573557789936" duration="4344000" />
       <workItem from="1573568343812" duration="4596000" />
       <workItem from="1573607616948" duration="6892000" />
+      <workItem from="1573914804727" duration="4765000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((ArrayList) standEvent.getInvokeList()).size" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
