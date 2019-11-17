@@ -48,9 +48,6 @@ public class GenerateEventUtil {
             list.add(parameter);
             event.setParameters(list);
         }
-//        for(int i=start+1;i<end+1;i++){
-//            System.out.println(callSequences.get(i).methodName);
-//        }
         List<MyMethod> invokes = callSequences.subList(start+1,end+1);
         event.setInvokeList(invokes);
         return event;
@@ -75,6 +72,7 @@ public class GenerateEventUtil {
             start--;
         }else if(curMethodName.equals(DISPATCH)){
             //过滤掉dispatchTouchEvent的action=2的情况，直到遇到action=1
+            //获取处理事件的view
             boolean checking = true;
             while (checking&&start<callSequences.size()){
                 if(callSequences.get(start).methodName.equals(DISPATCH)&&
@@ -86,6 +84,7 @@ public class GenerateEventUtil {
                 //且令checking为true，退回到上一个dispatchTouchEvent
                 if(!callSequences.get(start).methodName.equals(DISPATCH)){
                     checking = true;
+                    System.out.println("stop because not find action =1 dispatchTouchEvent");
                     break;
                 }
                 start++;
@@ -106,16 +105,6 @@ public class GenerateEventUtil {
         //定位到下一个动作的开始之间
         end--;
 
-        //跳过处理事件的组件找到用户直接点击的组件
-//        if(curMethodName.equals(DISPATCH)){
-//            //使用action=1的dispatchTouchEvent的信息
-//            curMyMethod = callSequences.get(pos);
-//            MyMethod disMethod = callSequences.get(start);
-////            disMethod.methodCaller = curMyMethod.methodCaller;
-//            disMethod.childs = curMyMethod.childs;
-//            disMethod.selfJson = curMyMethod.selfJson;
-////            disMethod.parent = curMyMethod.parent;
-//        }
         return new int[]{start,end};
     }
 
@@ -171,6 +160,47 @@ public class GenerateEventUtil {
             }
         }
         return target;
+    }
+
+    /**
+     * 提取callSequence中的用户操作
+     * 对于点击事件，数组的第一个表示包含按下时的view的event，第二个表示 包含处理事件view的event
+     * 对于输入，数组的第一个。第二个都为同一个event
+     * @param callSequence
+     * @return
+     */
+    public static List<Event[]> extractEvent(List<MyMethod> callSequence){
+        int start = 0;
+        int range[] = null;
+        List<Event[]> list = new ArrayList<>();
+        Event events[] = null;
+        //去除操作开始之前的方法调用信息
+        MyMethod curMyMethod = callSequence.get(start);
+        while(!curMyMethod.methodName.equals(SETTEXT)&&!curMyMethod.methodName.equals(DISPATCH)&&start<callSequence.size()){
+            start++;
+            curMyMethod = callSequence.get(start);
+        }
+        int seqSize = callSequence.size();
+        while(start<seqSize){
+            range = getEventCallRange(start,callSequence);
+            curMyMethod = callSequence.get(start);
+            if(curMyMethod.methodName.equals(DISPATCH)){
+                Event down = initDispatchEventByMyMethod(curMyMethod);
+                Event up = initDispatchEventByMyMethod(callSequence.get(range[0]));
+                events = new Event[2];
+                events[0] = down;
+                events[1] = up;
+                list.add(events);
+            }else{
+                Event textEvent = initSetTextEventByMyMethod(callSequence.get(range[0]));
+                events = new Event[2];
+                events[0] = textEvent;
+                events[1] = textEvent;
+                list.add(events);
+            }
+            start = range[1]+1;
+        }
+        return list;
     }
     private static Event initDispatchEventByMyMethod(MyMethod myMethod){
         myMethod = getViewAboutMyMethod(myMethod);

@@ -10,7 +10,8 @@ import java.util.List;
 
 public class BuildModel2 {
     private List<List<MyMethod>> callLogSet;
-    private List<Event> eventDataSet,singleEvents;
+    private List<Event> eventDataSet;
+    private List<Event[]> singleEvents;
     private PreProcess preProcess ;
     public BuildModel2(){
         callLogSet = new ArrayList<>();
@@ -24,7 +25,7 @@ public class BuildModel2 {
 //            System.out.println(event.getComponentId()+" "+event.getMethodName()+" "+event.getPath());
 //        }
         if(singleEvents==null){
-            singleEvents = GenerateEventUtil.generateEvents(newMethodData);
+            singleEvents = GenerateEventUtil.extractEvent(newMethodData);
         }
         eventDataSet.addAll(events);
     }
@@ -34,12 +35,15 @@ public class BuildModel2 {
         }
         List<Event> events = ProcessEventUtil.processRawEvents(eventDataSet);
         List<Event> modelEvents = new ArrayList<>();
-        for(Event event1:singleEvents){
-            Event temp = getCorrespondingEvent(event1,events);
+        for(Event itemEvents[]:singleEvents){
+            Event temp = getCorrespondingEvent(itemEvents[1],events);
             if(temp==null){
                 System.out.println("不能找到与用户Event对应的event(候选模板中的)");
                 return null;
             }
+            //更换event(候选模板)中的componentId和path
+            temp.setComponentId(itemEvents[0].getComponentId());
+            temp.setPath(itemEvents[0].getPath());
             modelEvents.add(temp);
         }
         return modelEvents;

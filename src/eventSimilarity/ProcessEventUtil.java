@@ -138,11 +138,11 @@ public class ProcessEventUtil {
         jsonObject.put("methodName",event.getMethodName());
         jsonObject.put("parameterValue","");
         GenerateGNode generateGNode = new GenerateGNode();
-//        List<String> invokes = generateGNode.getNodeSeq(event.getInvokeList());
-        List<String> invokes = new ArrayList<>();
-        for(MyMethod myMethod:event.getInvokeList()){
-            invokes.add("("+myMethod.methodCaller+"/"+myMethod.methodName+")");
-        }
+        List<String> invokes = generateGNode.getNodeSeq(event.getInvokeList());
+//        List<String> invokes = new ArrayList<>();
+//        for(MyMethod myMethod:event.getInvokeList()){
+//            invokes.add("("+myMethod.methodCaller+"/"+myMethod.methodName+")");
+//        }
         JSONObject invokeObject = new JSONObject();
         int num=0;
         for(String invokeItem:invokes){

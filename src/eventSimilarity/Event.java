@@ -25,6 +25,14 @@ public class Event {
         this.invokeList = invokeList;
     }
 
+    public void setComponentId(String componentId) {
+        this.componentId = componentId;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
     public String getActivityId() {
         return activityId;
     }

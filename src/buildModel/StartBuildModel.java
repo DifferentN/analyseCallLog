@@ -39,28 +39,28 @@ public class StartBuildModel {
 	}
 	private static void useBuildModel2(){
         //读取指定文件中的打印序列
-        List<MyMethod> callSeq1 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/douban/searchMovie/methodLog-1.txt");
-        List<MyMethod> callSeq2 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/douban/searchMovie/methodLog-2.txt");
-        List<MyMethod> callSeq3 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/douban/searchMovie/methodLog-3.txt");
-        List<MyMethod> callSeq4 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/douban/searchMovie/methodLog-4.txt");
+        List<MyMethod> callSeq1 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/qqmusic/searchMusic/methodLog-1.txt");
+        List<MyMethod> callSeq2 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/qqmusic/searchMusic/methodLog-2.txt");
+        List<MyMethod> callSeq3 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/qqmusic/searchMusic/methodLog-3.txt");
+//        List<MyMethod> callSeq4 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/douban/searchMovie/methodLog-4.txt");
 //        List<MyMethod> callSeq5 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/douban/searchMovie/methodLog-5.txt");
 //        List<MyMethod> callSeq6 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/douban/searchMovie/methodLog-6.txt");
 //        List<MyMethod> callSeq7 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/douban/searchMovie/methodLog-7.txt");
         BuildModel2 buildModel2 = new BuildModel2();
-        ArrayList<String> userInput4 = new ArrayList<>();
-        userInput4.add("海上钢琴师");//少年的你  李荣浩 面条
-        buildModel2.addCallLogData(callSeq4,userInput4);
+//        ArrayList<String> userInput4 = new ArrayList<>();
+//        userInput4.add("海上钢琴师");//少年的你  李荣浩 面条
+//        buildModel2.addCallLogData(callSeq4,userInput4);
 
-//		ArrayList<String> userInput3 = new ArrayList<>();
-//		userInput3.add("钢铁侠");//钢铁侠  吴亦凡 汤圆
-//		buildModel2.addCallLogData(callSeq3,userInput3);
+		ArrayList<String> userInput3 = new ArrayList<>();
+		userInput3.add("吴亦凡");//钢铁侠  吴亦凡 汤圆
+		buildModel2.addCallLogData(callSeq3,userInput3);
 
         ArrayList<String> userInput1 = new ArrayList<>();
-        userInput1.add("中国机长");//中国机长  李白 锅盔
+        userInput1.add("李白");//中国机长  李白 锅盔
         buildModel2.addCallLogData(callSeq1,userInput1);
 
         ArrayList<String> userInput2 = new ArrayList<>();
-        userInput2.add("少年的你");//少年的你  李荣浩 面条
+        userInput2.add("李荣浩");//少年的你  李荣浩 面条
         buildModel2.addCallLogData(callSeq2,userInput2);
 
 
