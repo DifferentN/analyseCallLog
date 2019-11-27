@@ -104,7 +104,6 @@ public class GenerateEventUtil {
         }
         //定位到下一个动作的开始之间
         end--;
-
         return new int[]{start,end};
     }
 
@@ -198,6 +197,39 @@ public class GenerateEventUtil {
                 events[1] = textEvent;
                 list.add(events);
             }
+            start = range[1]+1;
+        }
+        return list;
+    }
+
+    /**
+     * 针对自适应部分 生成点击事件
+     * dispatch的event不同：用第一个dispatchTouch方法的viewPath 和 viewId替换生成的event中的viewPath和viewId
+     * setText的event相同
+     * @param callSequence
+     * @return
+     */
+    public static List<Event> generateEventsForSelfAdapter(List<MyMethod> callSequence){
+        int start = 0;
+        int range[] = null;
+        List<Event> list = new ArrayList<>();
+        Event event = null;
+        //去除操作开始之前的方法调用信息
+        MyMethod curMyMethod = callSequence.get(start);
+        while(!curMyMethod.methodName.equals(SETTEXT)&&!curMyMethod.methodName.equals(DISPATCH)&&start<callSequence.size()){
+            start++;
+            curMyMethod = callSequence.get(start);
+        }
+        int seqSize = callSequence.size();
+        while(start<seqSize){
+            range = getEventCallRange(start,callSequence);
+            //第一个dispatch方法的event
+            Event event2 = initDispatchEventByMyMethod(callSequence.get(start));
+            //将event的viewPath和viewId设置为第一个dispatch方法的viewPath和viewId
+            event = getEventFrom(range[0],range[1],callSequence);
+            event.setPath(event2.getPath());
+            event.setComponentId(event2.getComponentId());
+            list.add(event);
             start = range[1]+1;
         }
         return list;

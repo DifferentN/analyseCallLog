@@ -14,38 +14,41 @@ import java.util.List;
 
 public class StartSimilarity {
     public static void main(String[] args){
-        List<MyMethod> invokes1 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/anki/methodLog_original_all.txt");
-        List<MyMethod> invokes2 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/anki/methodLog_change_all.txt");
+        List<MyMethod> invokes1 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/selfAdapter/methodLog_original.txt");//methodLog_original
+        List<MyMethod> invokes2 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/selfAdapter/methodLog_change.txt");//methodLog_change
 //        for(MyMethod myMethod:invokes1){
 //            System.out.println(myMethod.methodName+" "+myMethod.childs.size());
 //        }
         //方法相似度
-        HashMap<String,Float> hash = ReadMethodSimilarityUtil.readMethodSimilarityToHash("C:/Users/17916/Desktop/anki/method-3.txt");
+        HashMap<String,Float> hash = ReadMethodSimilarityUtil.readMethodSimilarityToHash("C:/Users/17916/Desktop/selfAdapter/method-3.txt");
         //转化为event序列
-        List<Event> events1 = GenerateEventUtil.generateEvents(invokes1);
-        List<Event> events2 = GenerateEventUtil.generateEvents(invokes2);
+        List<Event> events1 = GenerateEventUtil.generateEventsForSelfAdapter(invokes1);
+        List<Event> events2 = GenerateEventUtil.generateEventsForSelfAdapter(invokes2);
 
-        List<EventMap> eventMaps = getEventMap(events1,events2,hash);
         GenerateGNode generateGNode = new GenerateGNode();
-//        for(EventMap eventMap:eventMaps){
-//            String info = "oldEvent: "+eventMap.oldEvent.getComponentId()+"-"+eventMap.oldEvent.getMethodName();
-//            info += "; maxSim: "+eventMap.maxSim;
-//            info += "; newEvent: ";
-//            for(Event event:eventMap.newEvents){
-//                info+=event.getComponentId()+"-"+event.getMethodName()+"  ";
-//            }
-////            info+=generateGNode.getNodeSeq(eventMap.newEvents.get(0).getInvokeList());
-//            System.out.println(info);
+        List<EventMap> eventMaps = getEventMap(events1,events2,hash);
+        for(EventMap eventMap:eventMaps){
+            String info = "oldEvent: "+eventMap.oldEvent.getComponentId()+"-"+eventMap.oldEvent.getMethodName();
+            info += "; maxSim: "+eventMap.maxSim;
+            info += "; newEvent: ";
+            for(Event event:eventMap.newEvents){
+                info+=event.getComponentId()+"-"+event.getMethodName()+"  ";
+            }
+//            info+=generateGNode.getNodeSeq(eventMap.newEvents.get(0).getInvokeList());
+            System.out.println(info);
+        }
+
+        List<MyMethod> oldInvokes = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/selfAdapter/methodLog-2.txt");
+        List<Event> oldApiEvent = GenerateEventUtil.generateEventsForSelfAdapter(oldInvokes);
+//        for(Event event:oldApiEvent){
+//            System.out.println(event.getComponentId()+" "+event.getPath());
 //        }
-
-        List<MyMethod> oldInvokes = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/anki/methodLog.txt");
-        List<Event> oldApiEvent = GenerateEventUtil.generateEvents(oldInvokes);
-
         ReplaceModuleAPI replaceModuleAPI = new ReplaceModuleAPI();
         List<Event> apiEvents = replaceModuleAPI.replaceEvent(oldApiEvent,eventMaps);
-        for(Event event:apiEvents){
-            System.out.println(event.getComponentId()+" "+generateGNode.getNodeSeq(event.getInvokeList()));
-        }
+//        for(Event event:apiEvents){
+//            System.out.println(event.getComponentId()+" "+event.getPath());
+////            System.out.println(event.getComponentId()+" "+generateGNode.getNodeSeq(event.getInvokeList()));
+//        }
         JSONArray jsonArray = ProcessEventUtil.transformAPIEventsToJSONArray(apiEvents);
         MyFileWriter.writeEventJSONArray("execute.txt",jsonArray);
     }

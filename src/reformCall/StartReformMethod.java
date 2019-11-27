@@ -18,7 +18,7 @@ public class StartReformMethod {
 	private static List<MyMethod> loadMethod() {
 //		List<MyMethod> list1 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/anki/methodLog_add.txt");
 //		List<MyMethod> list2 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/anki/methodLog_show.txt");
-		List<MyMethod> list3 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/anki/methodLog_original_all.txt");
+		List<MyMethod> list3 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/selfAdapter/methodLog_change.txt");
 		List<MyMethod> res = new ArrayList<MyMethod>();
 //		res.addAll(list1);
 //		res.addAll(list2);

@@ -31,9 +31,11 @@ public class ReplaceModuleAPI {
             if(ProcessEventUtil.checkEvent(event,eventMap.oldEvent)){
                 if(eventMap.newEvents==null||eventMap.newEvents.isEmpty())
                     continue;
+                System.out.println("find correspondingEvent and replace Event");
                 return eventMap.newEvents.get(0);
             }
         }
+        System.out.println("not find correspondingEvent not replace Event");
         //未在新版中找到对应event，使用原来的event
         return event;
     }

@@ -157,7 +157,7 @@ public class PreProcess {
 				continue;
 			}
 			for(int j=0;j<userInput.size();j++) {
-				if(userInput.get(j).equals(json.get("parameterValue").toString())) {
+				if(userInput.get(j).contains(json.get("parameterValue").toString())) {
 					return true;
 				}
 			}

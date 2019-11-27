@@ -17,7 +17,7 @@ public class Analyser {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//读取指定文件中的打印序列
-		List<MyMethod> callSeq = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/qqmusic/searchMusic/methodLog-1.txt");
+		List<MyMethod> callSeq = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/timberX/changeTheme/methodLog-3.txt");
 		String pre = "";
 		GenerateGNode generateGNode = new GenerateGNode();
 

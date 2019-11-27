@@ -84,6 +84,7 @@ public class ProcessEventUtil {
      * @return
      */
     private static Event getCommonEvent(List<Event> events){
+//        System.out.println("--------");
         if(events==null||events.size()<1) return null;
         if(events.size()==1) return events.get(0);
         Event temp = events.get(0);
@@ -92,12 +93,14 @@ public class ProcessEventUtil {
         sample.setParameters(temp.getParameters());
         List<List<MyMethod>> methodsList = new ArrayList<>();
         for(Event event:events){
+//            System.out.println(event.getInvokeList().size());
 //            System.out.println(event.getComponentId()+" "+event.getMethodName());
             methodsList.add( event.getInvokeList() );
         }
 //        System.out.println("----");
         List<MyMethod> invokeTrees = getMostCommonInvoke(methodsList);
         sample.setInvokeList(invokeTrees);
+//        System.out.println("--------");
         return sample;
     }
 

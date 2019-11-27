@@ -1,6 +1,8 @@
 package test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import analyseMethodCall.MethodSequenceUtil;
@@ -46,7 +48,8 @@ public class testDispatchPart {
 		for(String str:res) {
 			System.out.println(str);
 		}
-		
+		List<Integer> list = new ArrayList<>();
+		Collections.sort(list,(Integer a,Integer b)->a-b);
 	}
 	private static List<MyMethod> trimForShiPuSearch(List<MyMethod> list){
 		MyMethod myMethod = null;
