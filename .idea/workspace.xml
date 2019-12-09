@@ -45,7 +45,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StartSimilarity">
+  <component name="RunManager" selected="Application.StartBuildModel">
     <configuration name="Analyser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="analyseMethodCall.Analyser" />
       <module name="analyseCallLog" />
@@ -113,9 +113,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StartBuildModel" />
         <item itemvalue="Application.StartSimilarity" />
         <item itemvalue="Application.Analyser" />
-        <item itemvalue="Application.StartBuildModel" />
         <item itemvalue="Application.StartReformMethod" />
         <item itemvalue="Application.TestMatchCallTree" />
       </list>
@@ -153,7 +153,11 @@
       <workItem from="1574737769810" duration="2620000" />
       <workItem from="1574780292154" duration="4028000" />
       <workItem from="1574812625970" duration="402000" />
-      <workItem from="1574820083952" duration="18881000" />
+      <workItem from="1574820083952" duration="19503000" />
+      <workItem from="1574918739314" duration="229000" />
+      <workItem from="1574927839389" duration="1024000" />
+      <workItem from="1574946275938" duration="3104000" />
+      <workItem from="1575086967833" duration="7190000" />
     </task>
     <servers />
   </component>

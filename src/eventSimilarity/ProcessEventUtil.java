@@ -23,7 +23,7 @@ public class ProcessEventUtil {
      */
     public static boolean checkEvent(Event event1,Event event2){
         //去掉Id判断，setText方法的Id可能会不同 （目前）
-        if(event1.getPath().equals(event2.getPath())){
+        if(event1.getPath().equals(event2.getPath())&&event1.getActivityId().equals(event2.getActivityId())){
             if(event1.getMethodName().equals(event2.getMethodName())){
                 return true;
             }

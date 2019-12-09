@@ -39,10 +39,10 @@ public class StartBuildModel {
 	}
 	private static void useBuildModel2(){
         //读取指定文件中的打印序列
-        List<MyMethod> callSeq1 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/timberX/changeTheme/methodLog-1.txt");
-        List<MyMethod> callSeq2 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/timberX/changeTheme/methodLog-2.txt");
-        List<MyMethod> callSeq3 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/timberX/changeTheme/methodLog-3.txt");
-//        List<MyMethod> callSeq4 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/douban/searchMovie/methodLog-4.txt");
+        List<MyMethod> callSeq1 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/dianlaike/jiezhang/methodLog-1.txt");
+        List<MyMethod> callSeq2 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/dianlaike/jiezhang/methodLog-2.txt");
+        List<MyMethod> callSeq3 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/dianlaike/jiezhang/methodLog-3.txt");
+//        List<MyMethod> callSeq4 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/dianlaike/printbarcode/methodLog-4.txt");
 //        List<MyMethod> callSeq5 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/douban/searchMovie/methodLog-5.txt");
 //        List<MyMethod> callSeq6 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/douban/searchMovie/methodLog-6.txt");
 //        List<MyMethod> callSeq7 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/3APP/douban/searchMovie/methodLog-7.txt");
@@ -65,7 +65,7 @@ public class StartBuildModel {
 		buildModel2.addCallLogData(callSeq3,userInput3);
 
 //        ArrayList<String> userInput4 = new ArrayList<>();
-//        userInput4.add("丑八怪");//海王
+//        userInput4.add("打印条码");//海王
 //        buildModel2.addCallLogData(callSeq4,userInput4);
 //
 //        ArrayList<String> userInput5 = new ArrayList<>();
