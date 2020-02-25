@@ -17,10 +17,10 @@ public class ReplaceModuleAPI {
 //                continue;
 //            }
             newEvent = findCorrespondingEvent(apiEvents.get(i),list);
-            if(i==2||i==4){
-                newEvent.setInvokeList(new ArrayList<>());
-            }
-
+//            if(i==2||i==4){
+//                newEvent.setInvokeList(new ArrayList<>());
+//            }
+//            newEvent.setInvokeList(new ArrayList<>());
             apiEvents.remove(i);
             apiEvents.add(i,newEvent);
         }
@@ -31,7 +31,7 @@ public class ReplaceModuleAPI {
             if(ProcessEventUtil.checkEvent(event,eventMap.oldEvent)){
                 if(eventMap.newEvents==null||eventMap.newEvents.isEmpty())
                     continue;
-                System.out.println("find correspondingEvent and replace Event");
+//                System.out.println("find correspondingEvent and replace Event");
                 return eventMap.newEvents.get(0);
             }
         }

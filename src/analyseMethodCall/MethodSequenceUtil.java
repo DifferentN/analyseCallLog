@@ -80,7 +80,7 @@ public class MethodSequenceUtil {
 		for(MyMethod method :stack){
 			System.out.println(method.name);
 		}
-		System.out.println(beforeNum+" "+afterNum);
+//		System.out.println(beforeNum+" "+afterNum);
 		return callSeq;
 	}
 	private static boolean checkThreadId(String jsonString,int threadId) {

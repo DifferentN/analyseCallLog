@@ -144,6 +144,8 @@ public class PreProcess {
 				res.add(myMethod);
 			}else if(myMethod.methodName.equals("dispatchTouchEvent")) {
 				res.add(myMethod);
+			}else{
+//				System.out.println("discard: "+myMethod.methodCaller+"/"+myMethod.methodName);
 			}
 		}
 		return res;

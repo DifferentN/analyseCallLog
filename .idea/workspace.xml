@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="analyseCallLog:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6c070fa9-f6d0-4d36-8a97-ad5eccaf5c82" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -11,6 +16,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -24,7 +30,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="D:/JavaJar/fastjson-1.2.61.jar!/" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -52,6 +58,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="analyseMethodCall.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShowInfo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exhibit.ShowInfo" />
+      <module name="analyseCallLog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exhibit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,26 +117,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMatchCallTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.TestMatchCallTree" />
-      <module name="analyseCallLog" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.StartBuildModel" />
+        <item itemvalue="Application.ShowInfo" />
         <item itemvalue="Application.StartSimilarity" />
         <item itemvalue="Application.Analyser" />
         <item itemvalue="Application.StartReformMethod" />
-        <item itemvalue="Application.TestMatchCallTree" />
       </list>
     </recent_temporary>
   </component>
@@ -158,6 +164,51 @@
       <workItem from="1574927839389" duration="1024000" />
       <workItem from="1574946275938" duration="3104000" />
       <workItem from="1575086967833" duration="7190000" />
+      <workItem from="1576129738050" duration="5692000" />
+      <workItem from="1576140956653" duration="48000" />
+      <workItem from="1576337229837" duration="98000" />
+      <workItem from="1576377111951" duration="238000" />
+      <workItem from="1576468691806" duration="1070000" />
+      <workItem from="1576475287985" duration="149000" />
+      <workItem from="1576489343857" duration="8498000" />
+      <workItem from="1576546879913" duration="5656000" />
+      <workItem from="1576640382431" duration="1825000" />
+      <workItem from="1577024887158" duration="794000" />
+      <workItem from="1577090093419" duration="4759000" />
+      <workItem from="1577108237943" duration="502000" />
+      <workItem from="1577158096163" duration="1283000" />
+      <workItem from="1577237513768" duration="1332000" />
+      <workItem from="1577375606676" duration="36000" />
+      <workItem from="1577406940407" duration="445000" />
+      <workItem from="1578226564165" duration="446000" />
+      <workItem from="1578383524144" duration="3549000" />
+      <workItem from="1578409999049" duration="2017000" />
+      <workItem from="1578445354488" duration="16571000" />
+      <workItem from="1578537046457" duration="15522000" />
+      <workItem from="1578639994300" duration="1345000" />
+      <workItem from="1579189921198" duration="4474000" />
+      <workItem from="1579480337745" duration="1802000" />
+      <workItem from="1579569127346" duration="3876000" />
+      <workItem from="1579746707035" duration="1062000" />
+      <workItem from="1579955998164" duration="2001000" />
+      <workItem from="1580089224453" duration="5134000" />
+      <workItem from="1580181181600" duration="5573000" />
+      <workItem from="1580283175071" duration="918000" />
+      <workItem from="1580802535477" duration="1913000" />
+      <workItem from="1580871893640" duration="5420000" />
+      <workItem from="1581042981717" duration="1973000" />
+      <workItem from="1581145993910" duration="8152000" />
+      <workItem from="1581212889488" duration="3758000" />
+      <workItem from="1581496734122" duration="733000" />
+      <workItem from="1581997255554" duration="2141000" />
+      <workItem from="1582021831544" duration="4873000" />
+      <workItem from="1582082419510" duration="4870000" />
+      <workItem from="1582163285429" duration="21587000" />
+      <workItem from="1582250946121" duration="4942000" />
+      <workItem from="1582336954727" duration="6931000" />
+      <workItem from="1582424524682" duration="2305000" />
+      <workItem from="1582510634572" duration="1362000" />
+      <workItem from="1582548751450" duration="1353000" />
     </task>
     <servers />
   </component>
@@ -180,7 +231,7 @@
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="Application">
-        <watch expression="((ArrayList) standEvent.getInvokeList()).size" language="JAVA" />
+        <watch expression="newEvent.getInvokeList()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

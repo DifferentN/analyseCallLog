@@ -24,6 +24,7 @@ public class GenerateEventUtil {
         int seqSize = callSequence.size();
         while(start<seqSize){
             range = getEventCallRange(start,callSequence);
+//            System.out.println(range[0]+","+range[1]);
             event = getEventFrom(range[0],range[1],callSequence);
             list.add(event);
             start = range[1]+1;
@@ -73,18 +74,28 @@ public class GenerateEventUtil {
         }else if(curMethodName.equals(DISPATCH)){
             //过滤掉dispatchTouchEvent的action=2的情况，直到遇到action=1
             //获取处理事件的view
-            boolean checking = true;
+            boolean checking = true;//用来检查down up的点击事件是否完整找到
+            boolean findDown = false;
             while (checking&&start<callSequences.size()){
                 if(callSequences.get(start).methodName.equals(DISPATCH)&&
                         checkEventAction(callSequences.get(start))==1){
                     checking = false;
                     break;
                 }
+                //找到了点击事件的down部分
+                if(!findDown&&
+                        (callSequences.get(start).methodName.equals(DISPATCH)&&checkEventAction(callSequences.get(start))==0)){
+                    findDown = true;
+                    start++;
+                    continue;
+                }
                 //由于某些原因，没有action=1的dispatchTouchEvent,停止
                 //且令checking为true，退回到上一个dispatchTouchEvent
-                if(!callSequences.get(start).methodName.equals(DISPATCH)){
+                if(callSequences.get(start).methodName.equals(SETTEXT)||
+                        (callSequences.get(start).methodName.equals(DISPATCH)&&checkEventAction(callSequences.get(start))==0)){
                     checking = true;
-                    System.out.println("stop because not find action =1 dispatchTouchEvent");
+                    System.out.println(start);
+//                    System.out.println("stop because not find action =1 dispatchTouchEvent");
                     break;
                 }
                 start++;
@@ -149,7 +160,7 @@ public class GenerateEventUtil {
             if(cur.selfJson.getBooleanValue("ViewFlag")&&cur.methodName.equals(DISPATCH)){
                 if(target==null){
                     target = cur;
-                }else if(getPath(cur.selfJson).contains(getPath(target.selfJson))){
+                }else if(getPath(cur.selfJson).length()>getPath(target.selfJson).length()){
                     target = cur;
                 }
 //                target = cur;
@@ -240,7 +251,7 @@ public class GenerateEventUtil {
         return new Event(getActivityId(json),getComponentId(json),getPath(json),DISPATCH);
     }
     private static Event initSetTextEventByMyMethod(MyMethod myMethod){
-        System.out.println(myMethod.methodName+" "+myMethod.methodCaller);
+//        System.out.println(myMethod.methodName+" "+myMethod.methodCaller);
         JSONObject json = myMethod.selfJson;
         return new Event(getActivityId(json),getComponentId(json),getPath(json),SETTEXT);
     }

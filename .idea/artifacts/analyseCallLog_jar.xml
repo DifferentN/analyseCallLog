@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="analyseCallLog:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/analyseCallLog_jar</output-path>
+    <root id="archive" name="analyseCallLog.jar">
+      <element id="module-output" name="analyseCallLog" />
+      <element id="extracted-dir" path="D:/JavaJar/fastjson-1.2.61.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

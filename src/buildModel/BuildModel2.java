@@ -21,6 +21,9 @@ public class BuildModel2 {
     public void addCallLogData(List<MyMethod> methodData,List<String> userInput){
         List<MyMethod> newMethodData = preProcess.processDataLink(methodData,userInput);
         List<Event> events = GenerateEventUtil.generateEvents(newMethodData);
+//        for(Event event:events){
+//            System.out.println(event.getMethodName());
+//        }
         if(singleEvents==null){
             singleEvents = GenerateEventUtil.extractEvent(newMethodData);
         }

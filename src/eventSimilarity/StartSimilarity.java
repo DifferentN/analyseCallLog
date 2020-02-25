@@ -4,9 +4,10 @@ import FileUtil.MyFileWriter;
 import analyseMethodCall.MethodSequenceUtil;
 import analyseMethodCall.MyMethod;
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import graph.GenerateGNode;
 
-import java.io.FileWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -14,16 +15,16 @@ import java.util.List;
 
 public class StartSimilarity {
     public static void main(String[] args){
-        List<MyMethod> invokes1 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/selfAdapter/methodLog_original.txt");//methodLog_original
-        List<MyMethod> invokes2 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/selfAdapter/methodLog_change.txt");//methodLog_change
-//        for(MyMethod myMethod:invokes1){
-//            System.out.println(myMethod.methodName+" "+myMethod.childs.size());
-//        }
+        System.out.println("开始自适应替换......");
+        List<MyMethod> invokes1 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/selfAdapter/TimberX/methodLog_original.txt");//methodLog_original
+        List<MyMethod> invokes2 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/selfAdapter/TimberX/methodLog_change.txt");//methodLog_change
+
         //方法相似度
-        HashMap<String,Float> hash = ReadMethodSimilarityUtil.readMethodSimilarityToHash("C:/Users/17916/Desktop/selfAdapter/method-3.txt");
+        HashMap<String,Float> hash = ReadMethodSimilarityUtil.readMethodSimilarityToHash("C:/Users/17916/Desktop/selfAdapter/TimberX/method-3.txt");
         //转化为event序列
         List<Event> events1 = GenerateEventUtil.generateEventsForSelfAdapter(invokes1);
         List<Event> events2 = GenerateEventUtil.generateEventsForSelfAdapter(invokes2);
+
 
         GenerateGNode generateGNode = new GenerateGNode();
         List<EventMap> eventMaps = getEventMap(events1,events2,hash);
@@ -34,23 +35,15 @@ public class StartSimilarity {
             for(Event event:eventMap.newEvents){
                 info+=event.getComponentId()+"-"+event.getMethodName()+"  ";
             }
-//            info+=generateGNode.getNodeSeq(eventMap.newEvents.get(0).getInvokeList());
-            System.out.println(info);
         }
 
-        List<MyMethod> oldInvokes = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/selfAdapter/methodLog-2.txt");
-        List<Event> oldApiEvent = GenerateEventUtil.generateEventsForSelfAdapter(oldInvokes);
-//        for(Event event:oldApiEvent){
-//            System.out.println(event.getComponentId()+" "+event.getPath());
-//        }
+        List<Event> oldApiEvent = obtain("C:/Users/17916/Desktop/selfAdapter/TimberX/execute.txt");
         ReplaceModuleAPI replaceModuleAPI = new ReplaceModuleAPI();
         List<Event> apiEvents = replaceModuleAPI.replaceEvent(oldApiEvent,eventMaps);
-//        for(Event event:apiEvents){
-//            System.out.println(event.getComponentId()+" "+event.getPath());
-////            System.out.println(event.getComponentId()+" "+generateGNode.getNodeSeq(event.getInvokeList()));
-//        }
+
         JSONArray jsonArray = ProcessEventUtil.transformAPIEventsToJSONArray(apiEvents);
         MyFileWriter.writeEventJSONArray("execute.txt",jsonArray);
+        System.out.println("自适应替换结束");
     }
 
     /**
@@ -91,5 +84,85 @@ public class StartSimilarity {
             res.add(eventMap);
         }
         return res;
+    }
+
+    /**
+     * 读取旧的服务版本
+     * @param path 旧服务的路径
+     * @return
+     */
+    private static List<Event> readOldService(String path){
+        File file = new File(path);
+        if(!file.exists()){
+            System.out.println("旧的服务文件不存在");
+            return new ArrayList<Event>();
+        }
+        StringBuffer serviceJSON = new StringBuffer();
+        FileReader fileReader = null;
+        String line = null;
+        try {
+            fileReader = new FileReader(file);
+            BufferedReader reader = new BufferedReader(fileReader);
+            while((line=reader.readLine())!=null){
+                serviceJSON.append(line);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        JSONArray jsonArray = JSONArray.parseArray(serviceJSON.toString());
+        List<Event> oldServiceEvent = new ArrayList<>();
+        Event event = null;
+        int index = 0;
+        for(int i=0;i<jsonArray.size();i++){
+            index = jsonArray.getJSONObject(i).getInteger("seqId");
+            event = transformJSONToEvent(jsonArray.getJSONObject(i));
+            oldServiceEvent.add(index,event);
+        }
+        return oldServiceEvent;
+    }
+
+    /**
+     * 将服务中的jsonObject转化为event
+     * @param jsonObject
+     * @return
+     */
+    public static Event transformJSONToEvent(JSONObject jsonObject){
+        String activityId = jsonObject.getString("ActivityID");
+        String viewId = jsonObject.getString("viewId");
+        String viewPath = jsonObject.getString("viewPath");
+        String methodName = jsonObject.getString("methodName");
+        String parameterValue = jsonObject.getString("parameterValue");
+        Event event = new Event(activityId,viewId,viewPath,methodName);
+
+        List<MyParameter> list = new ArrayList<>();
+        list.add(new MyParameter("String",parameterValue));
+        event.setParameters(list);
+
+        List<String> invokeListStr = new ArrayList<>();
+        JSONObject invokeJson = jsonObject.getJSONObject("invoke");
+        int size = invokeJson.getInteger("invokeSize");
+        for(int i=0;i<size;i++){
+            invokeListStr.add(invokeJson.getString(""+i));
+        }
+//        event.setInvokeList(invokeListStr);
+        return event;
+    }
+    private static List<Event> reform(List<Event> oldEvents,String oldServicePath){
+        List<Event> oldApiEvent = readOldService(oldServicePath);
+        if(oldApiEvent.size()!=oldEvents.size()){
+            return oldApiEvent;
+        }
+        for(int i=0;i<oldApiEvent.size();i++){
+            oldApiEvent.get(i).setPath(oldEvents.get(i).getPath());
+        }
+        return oldApiEvent;
+    }
+    private static List<Event> obtain(String path){
+        List<MyMethod> oldInvokes = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/selfAdapter/TimberX/methodLog-2.txt");
+        List<Event> oldApiEvent = GenerateEventUtil.generateEventsForSelfAdapter(oldInvokes);
+        oldApiEvent = reform(oldApiEvent,path);
+        return oldApiEvent;
     }
 }
