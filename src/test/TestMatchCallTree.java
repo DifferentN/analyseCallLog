@@ -1,13 +1,16 @@
 package test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class TestMatchCallTree {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		HashSet<String> hashSet = new HashSet<>();
+		Iterator<String> iterator = hashSet.iterator();
+		while(iterator.hasNext()){
+			String s = iterator.next();
+		}
 		ArrayList<Integer> list = new ArrayList<>();
 		list.add(1);
 		list.add(2);

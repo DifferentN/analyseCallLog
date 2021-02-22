@@ -1,13 +1,12 @@
 package exhibit;
 
-import FileUtil.MyFileWriter;
+import FileUtil.MyFileUtil;
 import analyseMethodCall.MethodSequenceUtil;
 import analyseMethodCall.MyMethod;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import eventSimilarity.Event;
 import eventSimilarity.GenerateEventUtil;
-import jsonParse.ParseUtil;
 
 import java.util.List;
 
@@ -47,7 +46,7 @@ public class ShowInfo {
             eventObject.put(INVOKE_LIST,invokeList);
             eventArray.add(eventObject);
         }
-        MyFileWriter.writeEventJSONArray(savePath,eventArray);
+        MyFileUtil.writeEventJSONArray(savePath,eventArray);
     }
     private static JSONArray obtainInvokeList(List<MyMethod> myMethodList){
         JSONArray invokeArray = new JSONArray();

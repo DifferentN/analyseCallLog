@@ -1,16 +1,12 @@
 package analyseMethodCall;
 
-import com.alibaba.fastjson.JSONObject;
-
-import FileUtil.MyFileWriter;
+import FileUtil.MyFileUtil;
 import graph.GenerateGNode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
-
-import javax.xml.transform.sax.TemplatesHandler;
 
 public class Analyser {
 
@@ -86,7 +82,7 @@ public class Analyser {
 			}
 		}
 	}
-	private static void printSubTree(String space,MyMethod root, MyFileWriter myFileWriter) {
+	private static void printSubTree(String space,MyMethod root, MyFileUtil myFileWriter) {
 		String name = "";
 		List<MyMethod> childs = root.childs;
 		MyMethod child = null;

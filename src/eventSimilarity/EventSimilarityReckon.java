@@ -20,6 +20,10 @@ public class EventSimilarityReckon {
      * @return
      */
     public float reckonEventSimilarity(Event event1,Event event2){
+        //不是同一个操作
+        if(!event1.getMethodName().equals(event2.getMethodName())||!event1.getPath().equals(event2.getPath())){
+            return -1;
+        }
         //event没有调用序列时的判断方法
         if(event1.getInvokeList().size()==0&&event2.getInvokeList().size()==0){
             if(event1.getMethodName().equals(event2.getMethodName())

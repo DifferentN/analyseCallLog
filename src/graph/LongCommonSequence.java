@@ -40,6 +40,7 @@ public class LongCommonSequence {
 			listStr.add(strs);
 		}
 		//
+		//通过一一对比各组实例中的调用序列，将相同的调用序列加入到模板中，并未使用最长公共子序列的方式
 		int size = Integer.MAX_VALUE;
 		for(int i=0;i<listStr.size();i++){
 			size = Math.min(size,listStr.get(i).size());
@@ -51,6 +52,7 @@ public class LongCommonSequence {
 			flag = true;
 			for(int j=1;j<listStr.size();j++){
 				if(!listStr.get(j-1).get(i).equals(listStr.get(j).get(i))){
+//					System.out.println(listStr.get(j).get(i));
 					flag = false;
 					break;
 				}

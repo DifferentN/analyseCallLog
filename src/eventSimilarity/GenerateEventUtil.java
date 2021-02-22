@@ -50,6 +50,11 @@ public class GenerateEventUtil {
             event.setParameters(list);
         }
         List<MyMethod> invokes = callSequences.subList(start+1,end+1);
+//        if(invokes==null||invokes.isEmpty()){
+//            System.out.println("invokes is null");
+//        }else {
+//            System.out.println("invokes is not null");
+//        }
         event.setInvokeList(invokes);
         return event;
     }
@@ -80,6 +85,7 @@ public class GenerateEventUtil {
                 if(callSequences.get(start).methodName.equals(DISPATCH)&&
                         checkEventAction(callSequences.get(start))==1){
                     checking = false;
+//                    System.out.println("action = 1");
                     break;
                 }
                 //找到了点击事件的down部分
@@ -94,8 +100,8 @@ public class GenerateEventUtil {
                 if(callSequences.get(start).methodName.equals(SETTEXT)||
                         (callSequences.get(start).methodName.equals(DISPATCH)&&checkEventAction(callSequences.get(start))==0)){
                     checking = true;
-                    System.out.println(start);
-//                    System.out.println("stop because not find action =1 dispatchTouchEvent");
+//                    System.out.println(start);
+                    System.out.println("stop because not find action =1 dispatchTouchEvent");
                     break;
                 }
                 start++;
@@ -152,6 +158,7 @@ public class GenerateEventUtil {
      */
     private static MyMethod getViewAboutMyMethod(MyMethod myMethod){
         List<MyMethod> queue = new ArrayList<>();
+//        System.out.println(myMethod.methodName);
         queue.add(myMethod);
         MyMethod target = null;
         MyMethod cur = null;
@@ -234,12 +241,16 @@ public class GenerateEventUtil {
         int seqSize = callSequence.size();
         while(start<seqSize){
             range = getEventCallRange(start,callSequence);
-            //第一个dispatch方法的event
-            Event event2 = initDispatchEventByMyMethod(callSequence.get(start));
-            //将event的viewPath和viewId设置为第一个dispatch方法的viewPath和viewId
-            event = getEventFrom(range[0],range[1],callSequence);
-            event.setPath(event2.getPath());
-            event.setComponentId(event2.getComponentId());
+            if(callSequence.get(start).methodName.equals(SETTEXT)){
+                event = getEventFrom(range[0],range[1],callSequence);
+            }else{
+                //第一个dispatch方法的event
+                Event event2 = initDispatchEventByMyMethod(callSequence.get(start));
+                //将event的viewPath和viewId设置为第一个dispatch方法的viewPath和viewId
+                event = getEventFrom(range[0],range[1],callSequence);
+                event.setPath(event2.getPath());
+                event.setComponentId(event2.getComponentId());
+            }
             list.add(event);
             start = range[1]+1;
         }
@@ -248,12 +259,12 @@ public class GenerateEventUtil {
     private static Event initDispatchEventByMyMethod(MyMethod myMethod){
         myMethod = getViewAboutMyMethod(myMethod);
         JSONObject json = myMethod.selfJson;
-        return new Event(getActivityId(json),getComponentId(json),getPath(json),DISPATCH);
+        return new Event(getActivityId(json),getComponentId(json),getPath(json),DISPATCH,myMethod.packageName);
     }
     private static Event initSetTextEventByMyMethod(MyMethod myMethod){
 //        System.out.println(myMethod.methodName+" "+myMethod.methodCaller);
         JSONObject json = myMethod.selfJson;
-        return new Event(getActivityId(json),getComponentId(json),getPath(json),SETTEXT);
+        return new Event(getActivityId(json),getComponentId(json),getPath(json),SETTEXT,myMethod.packageName);
     }
     private static String getActivityId(JSONObject jsonObject){
         return jsonObject.getString("ActivityID");

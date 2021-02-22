@@ -1,6 +1,6 @@
 package InputMatch;
 
-import FileUtil.MyFileWriter;
+import FileUtil.MyFileUtil;
 import com.alibaba.fastjson.JSONObject;
 
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ public class StartMatch {
         init();
         JSONObject json = matchInputEvent.matchInputAndEvent(inputPath,eventPath);
         String relationShipMapPath = "C:/Users/17916/Desktop/anki/rel.txt";
-        MyFileWriter myFileWriter = new MyFileWriter(relationShipMapPath);
+        MyFileUtil myFileWriter = new MyFileUtil(relationShipMapPath);
         myFileWriter.write(json.toJSONString());
     }
     private static void init(){

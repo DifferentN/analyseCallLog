@@ -23,6 +23,17 @@ public class ProcessEventUtil {
      */
     public static boolean checkEvent(Event event1,Event event2){
         //去掉Id判断，setText方法的Id可能会不同 （目前）
+//        if(event1.getPath().equals(event2.getPath())){
+//            System.out.println("path same");
+//        }else System.out.println("path not same");
+//        if(event1.getActivityId().equals(event2.getActivityId())){
+//            System.out.println("activity id same");
+//        }else{
+//            System.out.println("activity id not same: "+event1.getActivityId()+" "+event1.getMethodName()+" "+event2.getActivityId());
+//        }
+//        if(event1.getMethodName().equals(event2.getMethodName())){
+//            System.out.println("method same");
+//        }else System.out.println("method not same");
         if(event1.getPath().equals(event2.getPath())&&event1.getActivityId().equals(event2.getActivityId())){
             if(event1.getMethodName().equals(event2.getMethodName())){
                 return true;
@@ -88,7 +99,7 @@ public class ProcessEventUtil {
         if(events==null||events.size()<1) return null;
         if(events.size()==1) return events.get(0);
         Event temp = events.get(0);
-        Event sample = new Event(temp.getActivityId(),temp.getComponentId(),temp.getPath(),temp.getMethodName());
+        Event sample = new Event(temp.getActivityId(),temp.getComponentId(),temp.getPath(),temp.getMethodName(),temp.getPackageName());
 
         sample.setParameters(temp.getParameters());
         List<List<MyMethod>> methodsList = new ArrayList<>();
@@ -115,6 +126,7 @@ public class ProcessEventUtil {
         List<Event> res = new ArrayList<>();
         Set<Map.Entry<Integer,List<Event>>> entrySet = hash.entrySet();
         for(Map.Entry<Integer,List<Event>> entry:entrySet){
+//            System.out.println("classfy: "+entry.getValue().size());
             res.add( getCommonEvent(entry.getValue()) );
         }
         return res;
@@ -140,6 +152,14 @@ public class ProcessEventUtil {
         jsonObject.put("viewPath",event.getPath());
         jsonObject.put("methodName",event.getMethodName());
         jsonObject.put("parameterValue","");
+        //添加参数类型,只有输入操作有参数，点击操作没有
+        if(event.getParameters()!=null){
+            for(MyParameter param:event.getParameters()){
+                jsonObject.put("parameterType",param.type);
+            }
+        }
+        jsonObject.put("packageName",event.getPackageName()+"");
+
         GenerateGNode generateGNode = new GenerateGNode();
         List<String> invokes = generateGNode.getNodeSeq(event.getInvokeList());
 //        List<String> invokes = new ArrayList<>();

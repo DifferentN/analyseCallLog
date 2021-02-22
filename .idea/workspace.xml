@@ -6,7 +6,60 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c070fa9-f6d0-4d36-8a97-ad5eccaf5c82" name="Default Changelist" comment="" />
+    <list default="true" id="6c070fa9-f6d0-4d36-8a97-ad5eccaf5c82" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/apiAdapter/APKInfoExtractor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apiAdapter/Builder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apiAdapter/SimilarityUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apiAdapter/apiAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apiAdapter/data/MyAPK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apiAdapter/data/MyClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apiAdapter/data/MyField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/apiAdapter/data/MyMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/transformMethodSimilarity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyseCallLog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/analyseCallLog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/execute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/analyseCallLog_jar/analyseCallLog.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/analyseCallLog_jar/analyseCallLog.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/FileUtil/MyFileWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/InputMatch/StartMatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/InputMatch/StartMatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/Analyser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/Analyser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MethodSequenceUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MethodSequenceUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MyMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MyMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/BuildModel2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/BuildModel2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/StartBuildModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/StartBuildModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/EventSimilarityReckon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/EventSimilarityReckon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/GenerateEventUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/GenerateEventUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/ProcessEventUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/ProcessEventUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/ReplaceModuleAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/ReplaceModuleAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/StartSimilarity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/StartSimilarity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/GenerateAPIForExhibit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/GenerateAPIForExhibit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/ShowInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/ShowInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/graph/LongCommonSequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/graph/LongCommonSequence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/reformCall/ReformMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/reformCall/ReformMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/test/TestDp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/test/TestDp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/test/TestMatchCallTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/test/TestMatchCallTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reformLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/reformLog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileUtil/MyFileWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputMatch/StartMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputMatch/StartMatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analyseMethodCall/Analyser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/analyseMethodCall/Analyser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analyseMethodCall/MethodSequenceUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/analyseMethodCall/MethodSequenceUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analyseMethodCall/MyMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/analyseMethodCall/MyMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buildModel/BuildModel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buildModel/BuildModel2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/buildModel/StartBuildModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buildModel/StartBuildModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventSimilarity/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventSimilarity/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventSimilarity/EventSimilarityReckon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventSimilarity/EventSimilarityReckon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventSimilarity/GenerateEventUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventSimilarity/GenerateEventUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventSimilarity/ProcessEventUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventSimilarity/ProcessEventUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventSimilarity/ReplaceModuleAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventSimilarity/ReplaceModuleAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventSimilarity/StartSimilarity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventSimilarity/StartSimilarity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exhibit/GenerateAPIForExhibit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exhibit/GenerateAPIForExhibit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exhibit/ShowInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exhibit/ShowInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graph/LongCommonSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph/LongCommonSequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reformCall/ReformMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reformCall/ReformMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/TestDp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestDp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/TestMatchCallTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestMatchCallTree.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,14 +81,15 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="D:/JavaJar/fastjson-1.2.61.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/exhibit/selfAdapter" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEAProject\analyseCallLog\analyseCallLog\src\exhibit\selfAdapter" />
       <recent name="D:\IDEAProject\analyseCallLog\analyseCallLog\src" />
     </key>
   </component>
@@ -51,26 +105,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StartBuildModel">
-    <configuration name="Analyser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="analyseMethodCall.Analyser" />
+  <component name="RunManager" selected="Application.apiAdapter">
+    <configuration name="SelfAdapter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exhibit.selfAdapter.SelfAdapter" />
       <module name="analyseCallLog" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="analyseMethodCall.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShowInfo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exhibit.ShowInfo" />
-      <module name="analyseCallLog" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="exhibit.*" />
+          <option name="PATTERN" value="apiAdapter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -91,12 +132,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StartReformMethod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="reformCall.StartReformMethod" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exhibit.Test" />
       <module name="analyseCallLog" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="reformCall.*" />
+          <option name="PATTERN" value="exhibit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,12 +145,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StartSimilarity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="eventSimilarity.StartSimilarity" />
+    <configuration name="apiAdapter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="apiAdapter.apiAdapter" />
       <module name="analyseCallLog" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="eventSimilarity.*" />
+          <option name="PATTERN" value="apiAdapter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="transformMethodSimilarity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.transformMethodSimilarity" />
+      <module name="analyseCallLog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -119,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.apiAdapter" />
+        <item itemvalue="Application.SelfAdapter" />
         <item itemvalue="Application.StartBuildModel" />
-        <item itemvalue="Application.ShowInfo" />
-        <item itemvalue="Application.StartSimilarity" />
-        <item itemvalue="Application.Analyser" />
-        <item itemvalue="Application.StartReformMethod" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.transformMethodSimilarity" />
       </list>
     </recent_temporary>
   </component>
@@ -209,6 +263,98 @@
       <workItem from="1582424524682" duration="2305000" />
       <workItem from="1582510634572" duration="1362000" />
       <workItem from="1582548751450" duration="1353000" />
+      <workItem from="1582859517884" duration="4735000" />
+      <workItem from="1582960888887" duration="492000" />
+      <workItem from="1582976748189" duration="2074000" />
+      <workItem from="1583237661287" duration="1931000" />
+      <workItem from="1588065259932" duration="2206000" />
+      <workItem from="1588124752831" duration="4178000" />
+      <workItem from="1588206559037" duration="22678000" />
+      <workItem from="1588298466507" duration="1872000" />
+      <workItem from="1588383579904" duration="13236000" />
+      <workItem from="1588490295219" duration="1850000" />
+      <workItem from="1588664613578" duration="14857000" />
+      <workItem from="1588727606438" duration="4273000" />
+      <workItem from="1588818660610" duration="8026000" />
+      <workItem from="1588833845765" duration="702000" />
+      <workItem from="1588860146042" duration="1229000" />
+      <workItem from="1588919283840" duration="819000" />
+      <workItem from="1589167300058" duration="1420000" />
+      <workItem from="1589274802100" duration="1826000" />
+      <workItem from="1589339073319" duration="4102000" />
+      <workItem from="1589765673522" duration="10397000" />
+      <workItem from="1589858055005" duration="25294000" />
+      <workItem from="1589941680732" duration="18815000" />
+      <workItem from="1590046928194" duration="9089000" />
+      <workItem from="1590156843311" duration="1621000" />
+      <workItem from="1590197150076" duration="3098000" />
+      <workItem from="1590301195693" duration="38000" />
+      <workItem from="1590310233385" duration="5343000" />
+      <workItem from="1590395381256" duration="1300000" />
+      <workItem from="1590486218365" duration="1222000" />
+      <workItem from="1590592481048" duration="718000" />
+      <workItem from="1590660504802" duration="1220000" />
+      <workItem from="1590736378850" duration="7220000" />
+      <workItem from="1590807162849" duration="7556000" />
+      <workItem from="1590892585017" duration="9947000" />
+      <workItem from="1591154467923" duration="2097000" />
+      <workItem from="1591163891607" duration="4619000" />
+      <workItem from="1591239834490" duration="4260000" />
+      <workItem from="1591327072988" duration="1811000" />
+      <workItem from="1591410459694" duration="8576000" />
+      <workItem from="1591498088434" duration="5334000" />
+      <workItem from="1591542562393" duration="576000" />
+      <workItem from="1591579628412" duration="1293000" />
+      <workItem from="1591605689343" duration="4035000" />
+      <workItem from="1591754998681" duration="1984000" />
+      <workItem from="1591798987754" duration="808000" />
+      <workItem from="1591862499228" duration="231000" />
+      <workItem from="1591864086427" duration="952000" />
+      <workItem from="1591881364038" duration="676000" />
+      <workItem from="1592010975276" duration="1233000" />
+      <workItem from="1592141329357" duration="3647000" />
+      <workItem from="1592225918411" duration="815000" />
+      <workItem from="1592829453358" duration="2999000" />
+      <workItem from="1592885432869" duration="1336000" />
+      <workItem from="1592970917421" duration="285000" />
+      <workItem from="1595085493062" duration="1017000" />
+      <workItem from="1595123273079" duration="1530000" />
+      <workItem from="1595140926881" duration="1492000" />
+      <workItem from="1595347326104" duration="92000" />
+      <workItem from="1601778952059" duration="632000" />
+      <workItem from="1601864122299" duration="12002000" />
+      <workItem from="1601956754176" duration="8095000" />
+      <workItem from="1602058345039" duration="897000" />
+      <workItem from="1602169418615" duration="1738000" />
+      <workItem from="1602226860902" duration="4951000" />
+      <workItem from="1602300737090" duration="4336000" />
+      <workItem from="1602425679999" duration="1274000" />
+      <workItem from="1602465921815" duration="2071000" />
+      <workItem from="1602644281651" duration="164000" />
+      <workItem from="1602814302716" duration="7011000" />
+      <workItem from="1602947974716" duration="1863000" />
+      <workItem from="1603008621922" duration="5401000" />
+      <workItem from="1603076258489" duration="11299000" />
+      <workItem from="1603166633461" duration="3717000" />
+      <workItem from="1603244633819" duration="836000" />
+      <workItem from="1603335396395" duration="825000" />
+      <workItem from="1603459793234" duration="737000" />
+      <workItem from="1603856244450" duration="639000" />
+      <workItem from="1604195717721" duration="835000" />
+      <workItem from="1604481687869" duration="2087000" />
+      <workItem from="1605929830519" duration="3437000" />
+      <workItem from="1606566535917" duration="315000" />
+      <workItem from="1608454490732" duration="1234000" />
+      <workItem from="1610681995994" duration="3198000" />
+      <workItem from="1610781620155" duration="2474000" />
+      <workItem from="1610849424809" duration="2826000" />
+      <workItem from="1611061141837" duration="2175000" />
+      <workItem from="1611797859955" duration="1581000" />
+      <workItem from="1612057062219" duration="1950000" />
+      <workItem from="1612321940864" duration="1337000" />
+      <workItem from="1613308039084" duration="599000" />
+      <workItem from="1613353309779" duration="6935000" />
+      <workItem from="1613438738938" duration="23945000" />
     </task>
     <servers />
   </component>

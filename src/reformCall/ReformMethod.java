@@ -5,14 +5,14 @@ import java.util.List;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
-import FileUtil.MyFileWriter;
+import FileUtil.MyFileUtil;
 import analyseMethodCall.MyMethod;
 
 public class ReformMethod {
 	private String path = null;
-	public MyFileWriter myFileWriter;
+	public MyFileUtil myFileWriter;
 	public ReformMethod(String path) {
-		myFileWriter = new MyFileWriter(path);
+		myFileWriter = new MyFileUtil(path);
 	}
 	public void reformMethod(List<MyMethod> list) {
 		MyMethod cur = null;

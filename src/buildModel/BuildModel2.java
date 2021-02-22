@@ -19,13 +19,20 @@ public class BuildModel2 {
         eventDataSet = new ArrayList<>();
     }
     public void addCallLogData(List<MyMethod> methodData,List<String> userInput){
+//        System.out.println("before processDataLink: "+methodData.size());
         List<MyMethod> newMethodData = preProcess.processDataLink(methodData,userInput);
+//        System.out.println("after processDataLink: "+methodData.size());
+        newMethodData = methodData;
         List<Event> events = GenerateEventUtil.generateEvents(newMethodData);
-//        for(Event event:events){
-//            System.out.println(event.getMethodName());
-//        }
+        for(Event event:events){
+            System.out.println(event.getInvokeList().size());
+        }
+        //eliminate duplicate SetTExt
+        events = eliminateDuplicateSetText(events);
+
         if(singleEvents==null){
             singleEvents = GenerateEventUtil.extractEvent(newMethodData);
+            singleEvents = eliminateDuplicateSetTextForSingleEvent(singleEvents);
         }
         eventDataSet.addAll(events);
     }
@@ -66,6 +73,49 @@ public class BuildModel2 {
         }
         if(sameNum>1){
             System.out.println("找到与用户操作的Event对应的Event时，发现重复");
+        }
+        return res;
+    }
+
+    /**
+     * eventList中可能包含多个连续的且在同一个EditView上的setText事件，我们需要对这些连续的setText操作进行去重，
+     * 即只保留最后一个setText操作
+     * *@param eventList
+     * @return
+     */
+    private List<Event> eliminateDuplicateSetText(List<Event> eventList){
+        List<Event> resList = new ArrayList<>();
+        for(Event event:eventList){
+            if(resList.isEmpty()){
+                resList.add(event);
+                continue;
+            }
+            Event preEvent = resList.get(resList.size()-1);
+            if( preEvent.getMethodName().equals(event.getMethodName()) && preEvent.getMethodName().equals(Event.SETTEXT)
+                    && preEvent.getPath().equals(event.getPath())){
+                resList.remove(resList.size()-1);
+                resList.add(event);
+            }else{
+                resList.add(event);
+            }
+        }
+        return resList;
+    }
+
+    private List<Event[]> eliminateDuplicateSetTextForSingleEvent(List<Event[]> list){
+        List<Event[]> res = new ArrayList<>();
+        Event[] pre = null;
+        for(Event[] events:list){
+            if(pre==null){
+                res.add(events);
+            }else if( pre[0].getMethodName().equals(events[0].getMethodName()) && pre[0].getPath().equals(events[0].getPath()) &&
+                pre[0].getMethodName().equals(Event.SETTEXT) ){
+                res.remove(res.size()-1);
+                res.add(events);
+            }else{
+                res.add(events);
+            }
+            pre = events;
         }
         return res;
     }

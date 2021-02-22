@@ -1,39 +1,54 @@
 package test;
 
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
 
 public class TestDp {
     public static void main(String args[]){
-        int len1 = 20,len2 = 26;
-        float[] grid[] = new float[len1][len2];
-        Random random = new Random();
-        for(int i=0;i<len1;i++){
-            for(int j=0;j<len2;j++){
-//                grid[i][j] = random.nextInt(1000)*0.01f;
-//                System.out.print(grid[i][j]+" ");
-            }
-//            System.out.println("");
+        List<String> list1 = new ArrayList<>();
+        list1.add("a");
+        list1.add("b1");
+        list1.add("c");
+        list1.add("c");
+        List<String> list2 = new ArrayList<>();
+        list2.add("a");
+        list2.add("b2");
+        list2.add("c");
+        List<Integer> res = reckonLongCommonSeq(list1,list2);
+        for(int i:res){
+            System.out.println(i);
         }
-        float [][] flag = new float[len1][len2];
-        for(int i=0;i<len1;i++){
-            Arrays.fill(flag[i],-1f);
-        }
-        System.out.println(dp(0,0,len1,len2,flag,grid));
     }
-    private static float dp(int x,int y,int len1,int len2,float[][] flag,float[][] grid){
-        if(x>=len1||y>=len2){
-            return 0;
+    private static List<Integer> reckonLongCommonSeq(List<String> list1, List<String> list2){
+        int len1 = list1.size(),len2 = list2.size();
+        List<Integer> indexs = dp(list1,list2,len1-1,len2-1,new HashMap<String, ArrayList<Integer>>());
+        return indexs;
+    }
+    private static ArrayList<Integer> dp(List<String> list1,List<String> list2,int x,int y,HashMap<String,ArrayList<Integer>> hash){
+        String key = x+"/"+y;
+        if(x<0||y<0) {
+            return new ArrayList<Integer>();
         }
-        if(flag[x][y]>=0){
-            return flag[x][y];
+        if(hash.get(key)!=null) {
+            return hash.get(key);
         }
-        float res = -1f;
-        for(int i=y;i<len2;i++){
-            res = Math.max(res,grid[x][i]+dp(x+1,i+1,len1,len2,flag,grid));
+        ArrayList<Integer> temp1 = null,temp2 = null,temp3=null,maxTemp;
+        if( list1.get(x).equals(list2.get(y)) ) {
+            temp1 =(ArrayList<Integer>)  dp(list1,list2,x-1,y-1,hash).clone();
+            temp1.add(x);
         }
-        res = Math.max(res,dp(x+1,y,len1,len2,flag,grid));
-        flag[x][y] = res;
-        return res;
+        temp2 = dp(list1,list2,x-1,y,hash);
+        temp3 = dp(list1,list2,x,y-1,hash);
+
+        if(temp2.size()>temp3.size()) {
+            maxTemp = temp2;
+        }else {
+            maxTemp = temp3;
+        }
+
+        if(temp1!=null&&temp1.size()>maxTemp.size()) {
+            maxTemp = temp1;
+        }
+        hash.put(key, maxTemp);
+        return maxTemp;
     }
 }

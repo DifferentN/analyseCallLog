@@ -1,10 +1,6 @@
 package analyseMethodCall;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +21,7 @@ public class MethodSequenceUtil {
 		}
 		try {
 			FileReader fileReader = new FileReader(file);
-			BufferedReader reader = new BufferedReader(fileReader);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file),"UTF-8"));
 			String line = null;
 			while((line=reader.readLine())!=null) {
 				allSeq.add(line);
