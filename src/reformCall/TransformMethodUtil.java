@@ -1,8 +1,12 @@
 package reformCall;
 
+import FileUtil.MyFileUtil;
 import analyseMethodCall.MyMethod;
+import apiAdapter.data.MyMethodPair;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+
+import java.util.List;
 
 public class TransformMethodUtil {
     public static String getMethodInfo(MyMethod myMethod){
@@ -41,4 +45,29 @@ public class TransformMethodUtil {
         String res = "("+buf.toString()+")";
         return res;
     }
+
+    /**
+     * 将方法映射对写到路径为methodPairPath的文件中
+     * @param methodPairPath
+     * @param list
+     */
+    public static void writeMyMethodPairs(String methodPairPath,List<MyMethodPair> list){
+        JSONObject jsonObject = new JSONObject();
+        for(MyMethodPair myMethodPair:list){
+            String key = extractMethodInfo(myMethodPair.getMyMethod1())+"<->"+extractMethodInfo(myMethodPair.getMyMethod2());
+            jsonObject.put(key,myMethodPair.getSim());
+        }
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.add(jsonObject);
+        MyFileUtil.writeJSONArray(methodPairPath,jsonArray);
+    }
+    private static String extractMethodInfo(apiAdapter.data.MyMethod myMethod){
+        String signature = myMethod.getSignature();
+        int pos = signature.indexOf(":");
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append(signature.substring(1,pos+1))
+                .append(signature.substring(pos+2,signature.length()-1));
+        return stringBuffer.toString();
+    }
+
 }

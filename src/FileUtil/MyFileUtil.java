@@ -188,4 +188,32 @@ public class MyFileUtil {
 			e.printStackTrace();
 		}
 	}
+
+    public static void writeJSONArray(String path, JSONArray jsonArray){
+        File file = new File(path);
+        if(file.exists()){
+            file.delete();
+        }
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(file);
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream,"UTF-8");
+            BufferedWriter writer = new BufferedWriter(outputStreamWriter);
+            String content = jsonArray.toJSONString();
+            writer.write(content);
+
+            fileOutputStream.flush();
+            outputStreamWriter.flush();
+            writer.flush();
+            fileOutputStream.close();
+            outputStreamWriter.close();
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

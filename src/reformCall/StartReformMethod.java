@@ -14,6 +14,7 @@ public class StartReformMethod {
 		String path = "reformLog.txt";
 		ReformMethod reformMethod = new ReformMethod(path);
 		reformMethod.reformMethod(list);
+
 	}
 	private static List<MyMethod> loadMethod() {
 //		List<MyMethod> list1 = MethodSequenceUtil.getSequence("C:/Users/17916/Desktop/anki/methodLog_add.txt");
