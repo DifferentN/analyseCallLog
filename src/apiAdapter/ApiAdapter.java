@@ -5,6 +5,7 @@ import apiAdapter.data.MyAPK;
 import apiAdapter.data.MyClass;
 import apiAdapter.data.MyMethod;
 import apiAdapter.data.MyMethodPair;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import reformCall.TransformMethodUtil;
@@ -19,11 +20,17 @@ public class ApiAdapter {
         String apkPath2 = "C:\\Users\\17916\\Desktop\\APIGenerate\\AnkiDroid\\APK/AnkiDroid2.0-release.apk";
 
         //提取APK中的类方法信息 （因为Soot的原因，每次运行只能提取1个APK中的信息）
-//        String apkInfoPath = extractAPKInfo(apkPath1);
+        String path = null;
+        if(args==null||args.length==0||args[0]==null){
+            path = apkPath1;
+        }else if(args.length==1){
+            path = args[0];
+        }
+        String apkInfoPath = extractAPKInfo(path);
 
         String oldAPIPath = "C:/Users/17916/Desktop/APIGenerate/AnkiDroid/Instances/addItem/addItem.json";
         //对oldAPI进行调整
-        String newAPIPath = APISelfAdapt(oldAPIPath,"oldAPK.txt","newAPK.txt");
+//        String newAPIPath = APISelfAdapt(oldAPIPath,"oldAPK.txt","newAPK.txt");
     }
 
     public static String APISelfAdapt(String oldAPIPath,String oldInfoPath,String newInfoPath){

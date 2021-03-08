@@ -7,17 +7,74 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c070fa9-f6d0-4d36-8a97-ad5eccaf5c82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/apiAdapter/data/MyMethodPair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-lang3-3.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/fastjson-1.2.61.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/plantuml.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/soot-infoflow-android-classes.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/sootclasses-trunk-jar-with-dependencies.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/analyseCallLog_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/analyseCallLog_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/execute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/execute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/analyseCallLog_jar/analyseCallLog.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/analyseCallLog_jar/analyseCallLog.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/FileUtil/MyFileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/FileUtil/MyFileUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/InputMatch/MatchInputEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/InputMatch/MatchInputEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/InputMatch/StartMatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/InputMatch/StartMatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/Analyser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/Analyser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MethodDataUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MethodDataUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MethodSequenceUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MethodSequenceUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MyInvoke.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MyInvoke.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MyMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MyMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/APKInfoExtractor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/APKInfoExtractor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/SimilarityUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/SimilarityUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/apiAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/apiAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/data/MyAPK.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/data/MyAPK.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/data/MyClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/data/MyClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/data/MyField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/data/MyField.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/data/MyMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/data/MyMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/data/MyMethodPair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/apiAdapter/data/MyMethodPair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/BuildModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/BuildModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/BuildModel2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/BuildModel2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/PreProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/PreProcess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/StartBuildModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/StartBuildModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/Event.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/EventMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/EventMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/EventSimilarityReckon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/EventSimilarityReckon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/GenerateEventUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/GenerateEventUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/MyParameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/MyParameter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/ProcessEventUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/ProcessEventUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/ReadMethodSimilarityUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/ReadMethodSimilarityUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/ReplaceModuleAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/ReplaceModuleAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/StartSimilarity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/eventSimilarity/StartSimilarity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/GenerateAPIForExhibit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/GenerateAPIForExhibit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/InstanceInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/InstanceInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/LabelValueNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/LabelValueNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/ShowInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/ShowInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/selfAdapter/ReformMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/selfAdapter/ReformMethod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/selfAdapter/SelfAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/selfAdapter/SelfAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/graph/CommonBlockSequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/graph/CommonBlockSequence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/graph/GenerateGNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/graph/GenerateGNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/graph/LongCommonSequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/graph/LongCommonSequence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/graph/Start.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/graph/Start.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/jsonParse/EventParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/jsonParse/EventParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/jsonParse/MyMethodParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/jsonParse/MyMethodParser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/jsonParse/ParseUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/jsonParse/ParseUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/jsonParse/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/jsonParse/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/reformCall/ReformMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/reformCall/ReformMethod.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/reformCall/StartReformMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/reformCall/StartReformMethod.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/reformCall/TransformMethodUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/reformCall/TransformMethodUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileUtil/MyFileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileUtil/MyFileUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apiAdapter/apiAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/apiAdapter/ApiAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reformCall/StartReformMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reformCall/StartReformMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reformCall/TransformMethodUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reformCall/TransformMethodUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/test/TestDp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/test/TestDp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/test/TestMatchCallTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/test/TestMatchCallTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/test/testDispatchPart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/test/testDispatchPart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/test/transformMethodSimilarity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/test/transformMethodSimilarity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/apiAdapter/ApiAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/apiAdapter/ApiAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eventSimilarity/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eventSimilarity/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exhibit/selfAdapter/SelfAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exhibit/selfAdapter/SelfAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graph/LongCommonSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graph/LongCommonSequence.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,16 +95,19 @@
   </component>
   <component name="ProjectId" id="1TKAtDk3N1iVsIbB118eMRuyvCI" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/exhibit/selfAdapter" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEAProject\analyseCallLog\analyseCallLog\lib" />
       <recent name="D:\IDEAProject\analyseCallLog\analyseCallLog\src\exhibit\selfAdapter" />
       <recent name="D:\IDEAProject\analyseCallLog\analyseCallLog\src" />
     </key>
@@ -64,7 +124,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ApiAdapter">
+  <component name="RunManager" selected="Application.SelfAdapter">
     <configuration name="ApiAdapter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="apiAdapter.ApiAdapter" />
       <module name="analyseCallLog" />
@@ -132,8 +192,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ApiAdapter" />
         <item itemvalue="Application.SelfAdapter" />
+        <item itemvalue="Application.ApiAdapter" />
         <item itemvalue="Application.StartBuildModel" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.transformMethodSimilarity" />
@@ -317,7 +377,14 @@
       <workItem from="1614411150632" duration="2733000" />
       <workItem from="1614514255373" duration="713000" />
       <workItem from="1614581835989" duration="9536000" />
-      <workItem from="1614652790035" duration="3864000" />
+      <workItem from="1614652790035" duration="4488000" />
+      <workItem from="1614769567997" duration="613000" />
+      <workItem from="1614839537879" duration="4552000" />
+      <workItem from="1614845927057" duration="312000" />
+      <workItem from="1614846925276" duration="1488000" />
+      <workItem from="1615020664982" duration="768000" />
+      <workItem from="1615123535625" duration="3184000" />
+      <workItem from="1615163799492" duration="4316000" />
     </task>
     <servers />
   </component>

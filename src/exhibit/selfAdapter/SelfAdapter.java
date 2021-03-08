@@ -16,9 +16,9 @@ import java.util.*;
 
 public class SelfAdapter {
     public static void main(String args[]){
-        String oldPath = "C:/Users/17916/Desktop/APIGenerate/AnkiDroid/Instances/addItem.json";
+        String oldPath = "C:/Users/17916/Desktop/APIGenerate/AnkiDroid/Instances/addItem/addItem.json";
         String oldInvokePath = "C:/Users/17916/Desktop/selfAdapter/AnkiDroid/methodLog_original.txt";
-        String newInvokePath = "C:/Users/17916/Desktop/selfAdapter/AnkiDroid/methodLog_change.txt";
+        String newInvokePath = "C:\\Users\\17916\\Desktop\\selfAdapter\\temp\\anki/methodLog_change.txt";
         String res = adjustOldAPI(oldPath,oldInvokePath,newInvokePath);
         System.out.println(res);
     }

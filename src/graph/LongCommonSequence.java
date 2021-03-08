@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import analyseMethodCall.MyMethod;
-import javafx.beans.binding.MapExpression;
 
 public class LongCommonSequence {
 	private List<MyMethod> preProcessMyMethods(List<MyMethod> methods) {

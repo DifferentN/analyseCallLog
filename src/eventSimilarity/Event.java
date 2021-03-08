@@ -2,6 +2,7 @@ package eventSimilarity;
 
 import analyseMethodCall.MyMethod;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Event {
@@ -16,6 +17,7 @@ public class Event {
         this.path = path;
         this.methodName = methodName;
         this.packageName = packageName;
+        invokeList = new ArrayList<>();
     }
 
     public void setParameters(List<MyParameter> parameters) {

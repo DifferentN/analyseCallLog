@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Main-Class: apiAdapter.ApiAdapter
+Class-Path: commons-lang3-3.1.jar fastjson-1.2.61.jar plantuml.jar sootc
+ lasses-trunk-jar-with-dependencies.jar soot-infoflow-android-classes.ja
+ r
+

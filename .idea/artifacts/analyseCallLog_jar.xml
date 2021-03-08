@@ -3,7 +3,11 @@
     <output-path>$PROJECT_DIR$/out/artifacts/analyseCallLog_jar</output-path>
     <root id="archive" name="analyseCallLog.jar">
       <element id="module-output" name="analyseCallLog" />
+      <element id="extracted-dir" path="D:/JavaJar/soot-infoflow-android-classes.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/JavaJar/plantuml.jar" path-in-jar="/" />
       <element id="extracted-dir" path="D:/JavaJar/fastjson-1.2.61.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/JavaJar/sootclasses-trunk-jar-with-dependencies.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="D:/JavaJar/commons-lang3-3.1.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
