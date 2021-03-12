@@ -43,14 +43,24 @@ public class MethodSequenceUtil {
 		List<MyMethod> stack = new ArrayList<>();
 		ArrayList<MyMethod> callSeq = new ArrayList<>();
 		int beforeNum = 0,afterNum = 0;
+		if(allSeq==null){
+			System.out.println("allSeq is null");
+		}else System.out.println("allSeq: "+allSeq.size());
+
 		for(String methodName :allSeq) {
+			System.out.println(methodName);
 			if(methodName.startsWith("before: ")) {
 				beforeNum++;
+				System.out.println(beforeNum+" "+methodName.length());
 				String input = methodName.substring("before: ".length(), methodName.length());
+				System.out.println(input);
 				if(!checkThreadId(input,1)) {
+					System.out.println("continue");
 					continue;
 				}
+				System.out.println("before create myMethod");
 				MyMethod method = new MyMethod(input);
+				System.out.println("after create myMethod");
 				method.setInput(input);
 				stack.add(method);
 			}else if(methodName.startsWith("after: ")){
@@ -59,12 +69,14 @@ public class MethodSequenceUtil {
 				if(!checkThreadId(output,1)) {
 					continue;
 				}
+				System.out.println("stack size: "+stack.size());
 				MyMethod curM = stack.remove(stack.size()-1);
 				curM.setOutput(output);
 				if(stack.size()==0) {
 					callSeq.add(curM);
 					continue;
 				}
+				System.out.println("stack size: "+stack.size());
 				MyMethod preM = stack.get(stack.size()-1);
 				preM.addChild(curM);
 				curM.parent = preM;
@@ -80,7 +92,9 @@ public class MethodSequenceUtil {
 		return callSeq;
 	}
 	private static boolean checkThreadId(String jsonString,int threadId) {
+		System.out.println("before parse, "+JSONObject.class.getName());
 		JSONObject jsonObject = JSONObject.parseObject(jsonString);
+		System.out.println("after parse");
 		int id = jsonObject.getIntValue("threadId");
 		if(id==threadId) {
 			return true;

@@ -22,7 +22,7 @@ public class ApiAdapter {
         //提取APK中的类方法信息 （因为Soot的原因，每次运行只能提取1个APK中的信息）
         String path = null;
         if(args==null||args.length==0||args[0]==null){
-            path = apkPath1;
+            path = apkPath2;
         }else if(args.length==1){
             path = args[0];
         }

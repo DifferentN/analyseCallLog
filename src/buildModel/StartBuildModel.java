@@ -22,8 +22,15 @@ public class StartBuildModel {
 	    BuildModel2 buildModel2 = new BuildModel2();
 	    int len = instancePaths.size();
 	    for(int i=0;i<len;i++){
+            System.out.println("log-1");
+            System.out.println(instancePaths.get(i));
 	        List<MyMethod> callSeq = MethodSequenceUtil.getSequence(instancePaths.get(i));
+            System.out.println("log-1.5");
 	        List<String> userInput = userInputs.get(i);
+            System.out.println("log-2");
+            for(String p:userInput){
+                System.out.println(p);
+            }
 	        buildModel2.addCallLogData(callSeq,userInput);
         }
 	    List<Event> modelEvents = buildModel2.obtainModel();
