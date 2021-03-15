@@ -1,6 +1,7 @@
 package exhibit.selfAdapter;
 
 import apiAdapter.APKInfoExtractor;
+import apiAdapter.ApiAdapter;
 import apiAdapter.SimilarityUtil;
 import FileUtil.MyFileUtil;
 import analyseMethodCall.MethodSequenceUtil;
@@ -21,6 +22,12 @@ public class SelfAdapter {
         String newInvokePath = "C:\\Users\\17916\\Desktop\\selfAdapter\\temp\\anki/methodLog_change.txt";
         String res = adjustOldAPI(oldPath,oldInvokePath,newInvokePath);
         System.out.println(res);
+    }
+    public static String adjustOldAPI2(String oldAPIPath,String oldVersionInvokePath,String newVersionInvokePath){
+        String oldInfoPath = "C:\\Users\\17916\\Desktop\\APIGenerate\\AnkiDroid\\APK/AnkiDroid1.0-release.txt";
+        String newInfoPath = "C:\\Users\\17916\\Desktop\\APIGenerate\\AnkiDroid\\APK/AnkiDroid2.0-release.txt";
+        String newAPIPath = ApiAdapter.APISelfAdapt(oldAPIPath,oldInfoPath,newInfoPath);
+        return newAPIPath;
     }
     public static String adjustOldAPI(String oldAPIPath,String oldVersionInvokePath,String newVersionInvokePath){
         System.out.println("开始自适应替换......");

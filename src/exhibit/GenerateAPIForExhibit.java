@@ -31,12 +31,12 @@ public class GenerateAPIForExhibit {
         System.out.println("userInput: "+userInputStr);
         System.out.println("userOutput: "+userOutputStr);
         List<LabelValueNode> userInput = transformToListNode(userInputStr);
-        System.out.println("get userInput");
+//        System.out.println("get userInput");
         List<LabelValueNode> userOutput = transformToListNode(userOutputStr);
-        System.out.println("get userOutput");
+//        System.out.println("get userOutput");
         InstanceInfo instanceInfo = new InstanceInfo(path,userInput,userOutput);
         instanceInfos.add(instanceInfo);
-        System.out.println("instanceInfos size: "+instanceInfos.size());
+//        System.out.println("instanceInfos size: "+instanceInfos.size());
     }
 
     /**

@@ -8,13 +8,17 @@
   <component name="ChangeListManager">
     <list default="true" id="6c070fa9-f6d0-4d36-8a97-ad5eccaf5c82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/execute.json" beforeDir="false" afterPath="$PROJECT_DIR$/execute.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/analyseCallLog_jar/analyseCallLog.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/analyseCallLog_jar/analyseCallLog.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MethodSequenceUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/analyseMethodCall/MethodSequenceUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/StartBuildModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/buildModel/StartBuildModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/GenerateAPIForExhibit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/GenerateAPIForExhibit.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/analyseCallLog/exhibit/Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/analyseMethodCall/MethodSequenceUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/analyseMethodCall/MethodSequenceUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/apiAdapter/ApiAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/apiAdapter/ApiAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/buildModel/StartBuildModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buildModel/StartBuildModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exhibit/GenerateAPIForExhibit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exhibit/GenerateAPIForExhibit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/exhibit/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exhibit/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exhibit/selfAdapter/SelfAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exhibit/selfAdapter/SelfAdapter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ApiAdapter">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="ApiAdapter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="apiAdapter.ApiAdapter" />
       <module name="analyseCallLog" />
@@ -132,8 +136,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ApiAdapter" />
         <item itemvalue="Application.Test" />
+        <item itemvalue="Application.ApiAdapter" />
         <item itemvalue="Application.SelfAdapter" />
         <item itemvalue="Application.StartBuildModel" />
         <item itemvalue="Application.transformMethodSimilarity" />
@@ -327,6 +331,8 @@
       <workItem from="1615163799492" duration="16977000" />
       <workItem from="1615258590246" duration="663000" />
       <workItem from="1615423502289" duration="1227000" />
+      <workItem from="1615731932937" duration="5196000" />
+      <workItem from="1615769494091" duration="2149000" />
     </task>
     <servers />
   </component>
