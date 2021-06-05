@@ -110,6 +110,7 @@ public class GenerateAPIForExhibit {
         StartBuildModel startBuildModel = new StartBuildModel();
         System.out.println("微服务模板生成中......");
         List<Event> modelEvents = startBuildModel.generateAPI(instancePaths,userInputs);
+        modelEvents = reformAnkiPopupViewEvent(modelEvents);
         System.out.println("微服务模板生成完成");
         System.out.println("微服务模板标签分配中......");
         //modelEvents使用的是第一个用户实例的输入，所以用第一个用户给的输入标签-值来设置modelEvent中输入参数的标签
@@ -117,8 +118,10 @@ public class GenerateAPIForExhibit {
             if(event.getMethodName().equals(Event.SETTEXT)){
                 //给输入参数分配标签
                 for(MyParameter myParameter:event.getParameters()){
+//                    System.out.println(myParameter.value);
                     //在第一个用户实例中寻找标签
                     for(LabelValueNode node:instanceInfos.get(0).getUserInput()){
+//                        System.out.println(node.getValue());
                         //用户给的值相同于用户实例中的值相同，分配标签
                         if(node.getValue().equals(myParameter.value)){
                             myParameter.type = node.getLabel();
@@ -218,5 +221,56 @@ public class GenerateAPIForExhibit {
             }
         }
         return resJSON;
+    }
+
+    /**
+     * 只处理Anki中的PopoupView点击事件
+     * Anki的弹出窗口事件分发顺序有误，如检查数据功能，造成一个点击对应多个Event,在此将重复Event去掉
+     * PopupView事件分发，先给子View再给父View
+     * @param events
+     * @return
+     */
+    private List<Event> reformAnkiPopupViewEvent(List<Event> events){
+        //只处理Anki APP
+        if(!events.isEmpty()){
+            Event event = events.get(0);
+            if(!event.getActivityId().contains("anki")){
+                return events;
+            }
+        }
+        List<Event> newEvents = new ArrayList<>();
+        for(int i=0;i<events.size();i++){
+            Event curEvent = events.get(i);
+            if(!curEvent.getMethodName().contains("dispatchTouchEvent")){
+                //添加setText Event
+                newEvents.add(curEvent);
+                continue;
+            }
+            String viewPath = curEvent.getPath();
+            boolean isTarget = false;
+            int j=i+1;
+            for(;j<events.size();j++){
+                Event secEvent = events.get(j);
+                if( !( secEvent.getMethodName().contains("dispatchTouchEvent")&&
+                        secEvent.getPath().contains("PopupWindow")&&
+                        viewPath.contains(secEvent.getPath()) ) ){
+                    break;
+                }
+                isTarget = true;
+            }
+
+            if(!isTarget){
+                newEvents.add(curEvent);
+            }else{
+                //定位到viewPath的最后一个父View,修改父View的path
+                j--;
+                Event lastEvent = events.get(j);
+                lastEvent.setPath(viewPath);
+                newEvents.add(lastEvent);
+                //修改i,跳过重复的Event
+                i = j;
+            }
+        }
+        return newEvents;
     }
 }

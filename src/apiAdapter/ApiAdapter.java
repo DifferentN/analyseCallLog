@@ -16,21 +16,23 @@ import java.util.*;
 
 public class ApiAdapter {
     public static void main(String args[]){
-        String apkPath1 = "C:\\Users\\17916\\Desktop\\APIGenerate\\AnkiDroid\\APK/AnkiDroid1.0-release.apk";
+        String apkPath1 = "C:\\Users\\17916\\Desktop\\APIGenerate\\weather\\APK/weather1.0.apk";
         String apkPath2 = "C:\\Users\\17916\\Desktop\\APIGenerate\\AnkiDroid\\APK/AnkiDroid2.0-release.apk";
 
         //提取APK中的类方法信息 （因为Soot的原因，每次运行只能提取1个APK中的信息）
         String path = null;
-        if(args==null||args.length==0||args[0]==null){
-            path = apkPath2;
-        }else if(args.length==1){
-            path = args[0];
-        }
-        String apkInfoPath = extractAPKInfo(path);
+//        if(args==null||args.length==0||args[0]==null){
+//            path = apkPath2;
+//        }else if(args.length==1){
+//            path = args[0];
+//        }
+//        String apkInfoPath = extractAPKInfo(apkPath2);
 
-        String oldAPIPath = "C:/Users/17916/Desktop/APIGenerate/AnkiDroid/Instances/addItem/addItem.json";
+        String oldAPIPath = "C:\\Users\\17916\\Desktop\\APIGenerate\\musicPlayer/searchAlbum/searchAlbum.json";
         //对oldAPI进行调整
-//        String newAPIPath = APISelfAdapt(oldAPIPath,"oldAPK.txt","newAPK.txt");
+        String oldAPKInfoPath = "C:\\Users\\17916\\Desktop\\APIGenerate\\musicPlayer\\APK/musicPlayer1.0.txt";
+        String newAPKInfoPath = "C:\\Users\\17916\\Desktop\\APIGenerate\\musicPlayer\\APK/musicPlayer2.0.txt";
+        String newAPIPath = APISelfAdapt(oldAPIPath,oldAPKInfoPath,newAPKInfoPath);
     }
 
     public static String APISelfAdapt(String oldAPIPath,String oldInfoPath,String newInfoPath){
@@ -133,6 +135,11 @@ public class ApiAdapter {
                 }
             }
 //            System.out.println(extractMethodInfo(method1)+"\n"+extractMethodInfo(targetMethod));
+//            if(targetMethod!=null){
+//
+//            }else {
+//                System.out.println("targetMethod is null "+method1.getClassName());
+//            }
             methodPair.put(extractMethodInfo(method1),extractMethodInfo(targetMethod));
         }
 
@@ -187,7 +194,11 @@ public class ApiAdapter {
      */
     public static String extractAPKInfo(String apkPath){
         List<String> filter = new ArrayList<>();
-        filter.add("anki");
+        filter.add("ichi2");
+        filter.add("musicplayer");
+        filter.add("antennapod");
+        filter.add("omgodse");
+        filter.add("baronzhang");
 
         APKInfoExtractor extractor2 = new APKInfoExtractor(apkPath,filter);
         System.out.println(Runtime.getRuntime().totalMemory());

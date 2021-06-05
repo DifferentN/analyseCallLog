@@ -133,6 +133,10 @@ public class APKInfoExtractor {
         Iterator<SootClass> cit = classes.iterator();//类的迭代器
         while(cit.hasNext()){
             SootClass clazz = cit.next();
+            //去掉内部类
+            if(clazz.getName().contains("$")){
+                continue;
+            }
             if(isTargetClass(clazz,filter)){
                 clazzList.add(clazz);
             }
